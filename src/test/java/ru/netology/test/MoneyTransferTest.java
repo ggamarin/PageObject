@@ -69,10 +69,6 @@ public class MoneyTransferTest {
         val transferPage = dashboardPage.firstCard();
         val cardInfo = DataHelper.getSecondCardInfo();
         transferPage.transferCard(cardInfo, amount);
-        int balanceAfterTransferFirstCard = DataHelper.balanceOfSecondCardAfterTransfer(balanceOfFirstCardBefore, amount);
-        int balanceAfterTransferSecondCard = DataHelper.balanceOfFirstCardAfterTransfer(balanceOfSecondCardBefore, amount);
-        int balanceOfFirstCardAfter = DashboardPage.getCurrentBalanceOfFirstCard();
-        int balanceOfSecondCardAfter = DashboardPage.getCurrentBalanceOfSecondCard();
         $(withText("На балансе недостаточно средств")).shouldBe(Condition.visible);
     }
 }
